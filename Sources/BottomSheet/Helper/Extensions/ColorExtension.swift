@@ -12,5 +12,6 @@ internal extension Color {
     static var tertiaryLabel = Color(NSColor.tertiaryLabelColor)
 #else
     static var tertiaryLabel = Color(UIColor.tertiaryLabel)
+  static var tertiarySystemBackground = Color(UIColor.systemGray5)
 #endif
 }

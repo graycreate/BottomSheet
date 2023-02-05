@@ -323,19 +323,12 @@ internal extension BottomSheetView {
     
     var closeButton: some View {
         Button(action: self.closeSheet) {
-            Image(
-                "xmark.circle.fill",
-                bundle: Bundle.module
-            )
-            // Design of the close button
-                .resizable()
-                .renderingMode(.template)
-                .foregroundColor(.tertiaryLabel)
-                .scaledToFit()
-                .frame(
-                    width: 30,
-                    height: 30
-                )
+          Image(systemName: "xmark")
+            .font(.system(size: 13, weight: .bold))
+            .foregroundColor(.tertiaryLabel)
+            .padding(8)
+            .background(Color.tertiarySystemBackground)
+            .clipShape(Circle())
         }
         // Make it borderless for Mac
         .buttonStyle(.borderless)
@@ -371,7 +364,7 @@ internal extension BottomSheetView {
                 // On iPhone and iPad not floating only to the top corners,
                 // on iPad floating and Mac to all corners
                     .cornerRadius(
-                        10,
+                      self.configuration.cornerRadius,
                         corners: self.isIPadFloatingOrMac ? .allCorners : [
                             .topRight,
                             .topLeft
