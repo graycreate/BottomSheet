@@ -324,7 +324,7 @@ internal extension BottomSheetView {
     var closeButton: some View {
         Button(action: self.closeSheet) {
           Image(systemName: "xmark")
-            .font(.system(size: 13, weight: .bold))
+            .font(.system(size: 15, weight: .heavy))
             .foregroundColor(.tertiaryLabel)
             .padding(8)
             .background(Color.tertiarySystemBackground)
